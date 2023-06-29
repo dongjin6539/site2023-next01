@@ -1059,6 +1059,7 @@ img {
     margin: 10px;
     padding: 5px;
     width: 8%;
+    color: #fff;
 }
 .port__inner .port__btn button.active {
     background-color: #3969e4;
@@ -1128,6 +1129,10 @@ img {
 }
 .port__inner .port__cont .port:nth-child(6) .port__body span {
     background-color: #bca8c5;
+}
+.port__inner .port__cont .port:hover > a > .port__body > div > p {
+    text-decoration: underline;
+    text-underline-position: under;
 }
 .youtube__inner {
     height: 600px;
@@ -1383,6 +1388,7 @@ img {
 .movie__cont ul li {
     margin-bottom: 4%;
     width: 18%;
+    position: relative;
 }
 .movie__cont ul li span {
     display: block;

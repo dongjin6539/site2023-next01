@@ -1,9 +1,14 @@
-import React from 'react';
+import ContTitle from "@/components/title/ContTitle";
+import IntroCont from "@/components/intro/IntroCont";
+import React from "react";
 
-const Intro = () => {
-  return (
-    <div>Intro</div>
-  )
+const page = () => {
+    return (
+        <>
+            <ContTitle title="intro" />
+            <IntroCont />
+        </>
+    );
 };
 
-export default Intro;
+export default page;

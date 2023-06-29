@@ -1,9 +1,14 @@
-import React from 'react';
+import ContTitle from "@/components/title/ContTitle";
+import PortCont from "@/components/port/PortCont";
+import React from "react";
 
-const Port = () => {
-  return (
-    <div>Port</div>
-  )
+const page = () => {
+    return (
+        <>
+            <ContTitle title="port" />
+            <PortCont />
+        </>
+    );
 };
 
-export default Port;
+export default page;
