@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import styles from "./youtube.module.scss";
 
 const YoutubeItem = ({ youtube }) => {
     return (
@@ -22,7 +23,7 @@ const YoutubeItem = ({ youtube }) => {
 
 const YoutubeCont = ({ youtubes }) => {
     return (
-        <div className="youtube__cont container">
+        <div className={`${styles.youtube__cont} container`}>
             <ul>
                 {youtubes.map((youtube, index) => (
                     <YoutubeItem key={index} youtube={youtube} />

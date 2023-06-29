@@ -1,0 +1,105 @@
+// youtube__wrap
+.youtube__inner {
+    height: 600px;
+    h3 {
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+    p {
+        font-size: 24px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+    a {
+        border-radius: 50px;
+        margin-bottom: 60px;
+    }
+    .youtube__item {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        position: absolute;
+        .youtube {
+            width: 400px;
+            margin-right: 20px;
+            iframe {
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+// youtube__page
+.youtube__search {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 100px;
+    input {
+        border: 1px solid #e8ecf2;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 50px;
+        min-width: 300px;
+        margin-right: 10px;
+    }
+    button {
+        display: inline-block;
+        padding: 10px 50px;
+        background-color: #00c183;
+        color: #fff;
+        border: 0;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: darken(#00c183, 10%);
+        }
+        border-radius: 50px;
+    }
+}
+.youtube__tag {
+    div {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        button {
+            border: 1px solid #00c183;
+            padding: 10px 20px;
+            margin: 0 10px;
+            color: #00c183;
+            background-color: #fff;
+            &:hover {
+                background-color: #00c183;
+                color: #fff;
+            }
+        }
+        button.active {
+            background-color: #00c183; /* 선택된 태그의 배경색 */
+            color: #ffffff; /* 선택된 태그의 텍스트 색상 */
+        }
+    }
+}
+.youtube__cont {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        li {
+            width: 24%;
+            margin-bottom: 4%;
+            img {
+                width: 100%;
+            }
+            span {
+                display: block;
+                margin: 4px 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+}
