@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import styles from "./movie.module.scss";
+import styles from "./unsplash.module.scss";
 
 const UnsplashSerach = ({ onSearch }) => {
     const inputRef = useRef();
@@ -17,13 +17,13 @@ const UnsplashSerach = ({ onSearch }) => {
     };
 
     return (
-        <div className={styles.movie__search}>
+        <div className={styles.unsplash__search}>
             <h2 className="blind">검색하기</h2>
             <input
                 ref={inputRef}
                 type="search"
                 onKeyPress={onKeyPress}
-                placeholder="영화 검색하기"
+                placeholder="이미지 검색하기"
             />
             <button type="submit" onClick={onClick}>
                 검색

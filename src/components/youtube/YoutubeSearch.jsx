@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import styles from "./movie.module.scss";
+import styles from "./youtube.module.scss";
 
-const UnsplashSerach = ({ onSearch }) => {
+const YoutubeSerach = ({ onSearch }) => {
     const inputRef = useRef();
     const handleSearch = () => {
         const value = inputRef.current.value;
@@ -17,13 +17,13 @@ const UnsplashSerach = ({ onSearch }) => {
     };
 
     return (
-        <div className={styles.movie__search}>
+        <div className={styles.youtube__search}>
             <h2 className="blind">검색하기</h2>
             <input
                 ref={inputRef}
                 type="search"
                 onKeyPress={onKeyPress}
-                placeholder="영화 검색하기"
+                placeholder="유튜브 검색하기"
             />
             <button type="submit" onClick={onClick}>
                 검색
@@ -32,4 +32,4 @@ const UnsplashSerach = ({ onSearch }) => {
     );
 };
 
-export default UnsplashSerach;
+export default YoutubeSerach;

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import MovieCont from "@/components/movie/MovieCont";
 import MovieSearch from "@/components/movie/MovieSearch";
 import ContTitle from "@/components/title/ContTitle";
+import MovieTag from "@/components/movie/MovieTag";
+import MovieSlider from "@/components/movie/MovieSlider";
 
 const Movie = () => {
     const [movies, setMovies] = useState([]);
@@ -24,10 +26,30 @@ const Movie = () => {
 
     console.log(movies);
 
+    const search = async (query) => {
+        await fetch(
+            `https://api.themoviedb.org/3/search/movie?api_key=d437b67f2b55e3f176bbe6232a79ad1b&language=ko-KR&query=${query}`
+        )
+            .then((response) => response.json())
+            .then((result) => setMovies(result.results))
+            .catch((error) => console.log(error));
+    };
+
+    const tags = async (query) => {
+        await fetch(
+            `${query}?api_key=d437b67f2b55e3f176bbe6232a79ad1b&language=ko-KR`
+        )
+            .then((response) => response.json())
+            .then((result) => setMovies(result.results))
+            .catch((error) => console.log(error));
+    };
+
     return (
         <>
             <ContTitle title="movie" />
-            <MovieSearch />
+            <MovieSlider movies={movies} />
+            <MovieSearch onSearch={search} />
+            <MovieTag onSearch={tags} />
             <MovieCont movies={movies} />
         </>
     );

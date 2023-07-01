@@ -2,6 +2,9 @@
 import React, { useEffect, useState } from "react";
 import ContTitle from "@/components/title/ContTitle";
 import YoutubeCont from "@/components/youtube/YoutubeCont";
+import YoutubeSlider from "@/components/youtube/YoutubeSlider";
+import YoutubeSearch from "@/components/youtube/YoutubeSearch";
+import YoutubeTag from "@/components/youtube/YoutubeTag";
 
 const Movie = () => {
     const [youtubes, setYoutubes] = useState([]);
@@ -23,9 +26,21 @@ const Movie = () => {
 
     console.log(youtubes);
 
+    const search = async (query) => {
+        await fetch(
+            `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=32&q=${query}&type=video&videoDuration=medium&key=AIzaSyCP7j_dh-rc1KAc4FUEHCGNU0MZhPsM_Rw`
+        )
+            .then((response) => response.json())
+            .then((result) => setYoutubes(result.items))
+            .catch((error) => console.log(error));
+    };
+
     return (
         <>
             <ContTitle title="youtube" />
+            <YoutubeSlider youtubes={youtubes} />
+            <YoutubeSearch onSearch={search} />
+            <YoutubeTag onSearch={search} />
             <YoutubeCont youtubes={youtubes} />
         </>
     );
