@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import MovieCont from "@/components/movie/MovieCont";
+import MovieSearch from "@/components/movie/MovieSearch";
 import ContTitle from "@/components/title/ContTitle";
 
 const Movie = () => {
@@ -26,6 +27,7 @@ const Movie = () => {
     return (
         <>
             <ContTitle title="movie" />
+            <MovieSearch />
             <MovieCont movies={movies} />
         </>
     );
